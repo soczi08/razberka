@@ -81,12 +81,7 @@ namespace WindowsFormsApplication1
 
             panelSektorowAwarii.ItemCheck += Wysylanie_komunikatu_do_rpi;
 
-            button2.Click += delegate
-            {
-
-                CommunicationChannel.SendMessage("S2:");
-
-            };
+   
 
             btnDebug.Click += delegate
             {
@@ -129,25 +124,127 @@ namespace WindowsFormsApplication1
 
         private void ReakcjNaDaneZRasberry(string toCoWysyłaKolejkaPrzezPython)
         {
+            if (toCoWysyłaKolejkaPrzezPython == "E0:")
+            {
+                ZmienObrazSektora(PowiazanieIndexuzPanel(1), WindowsFormsApplication1.Properties.Resources._1pozycja);
+            }
+            if (toCoWysyłaKolejkaPrzezPython == "E1:")
+            {
+                ZmienObrazSektora(PowiazanieIndexuzPanel(2), WindowsFormsApplication1.Properties.Resources._1pozycja);
+            }
+            if (toCoWysyłaKolejkaPrzezPython == "E2:")
+            {
+                ZmienObrazSektora(PowiazanieIndexuzPanel(3), WindowsFormsApplication1.Properties.Resources._1pozycja);
+            }
+            if (toCoWysyłaKolejkaPrzezPython == "E3:")
+            {
+                ZmienObrazSektora(PowiazanieIndexuzPanel(4), WindowsFormsApplication1.Properties.Resources._1pozycja);
+            }
+            if (toCoWysyłaKolejkaPrzezPython == "E4:")
+            {
+                ZmienObrazSektora(PowiazanieIndexuzPanel(5), WindowsFormsApplication1.Properties.Resources._1pozycja);
+            }
+            if (toCoWysyłaKolejkaPrzezPython == "E5:")
+            {
+                ZmienObrazSektora(PowiazanieIndexuzPanel(6), WindowsFormsApplication1.Properties.Resources._1pozycja);
+            }
+            if (toCoWysyłaKolejkaPrzezPython == "E6:")
+            {
+                ZmienObrazSektora(PowiazanieIndexuzPanel(7), WindowsFormsApplication1.Properties.Resources._1pozycja);
+            }
+            if (toCoWysyłaKolejkaPrzezPython == "E7:")
+            {
+                ZmienObrazSektora(PowiazanieIndexuzPanel(8), WindowsFormsApplication1.Properties.Resources._1pozycja);
+            }
+            if (toCoWysyłaKolejkaPrzezPython == "E8:")
+            {
+                ZmienObrazSektora(PowiazanieIndexuzPanel(9), WindowsFormsApplication1.Properties.Resources._1pozycja);
+            }
+            if (toCoWysyłaKolejkaPrzezPython == "E9:")
+            {
+                ZmienObrazSektora(PowiazanieIndexuzPanel(10), WindowsFormsApplication1.Properties.Resources._1pozycja);
+            }
+
+
             if (toCoWysyłaKolejkaPrzezPython == "P0:")
             {
                 CzasOstatniegoOkrazenia(toCoWysyłaKolejkaPrzezPython);
-                ZmienObrazSektora(PowiazanieIndexuzPanel(0), WindowsFormsApplication1.Properties.Resources._1awaria);
+                ZmienObrazSektora(PowiazanieIndexuzPanel(1), WindowsFormsApplication1.Properties.Resources._1awaria);
 
-                panelSektorowAwarii.SetItemChecked(0, true);
-
-
-
-
+                panelSektorowAwarii.SetItemChecked(1, true);
             }
+
             if (toCoWysyłaKolejkaPrzezPython == "P1:")
             {
-                ZmienObrazSektora(PowiazanieIndexuzPanel(1), WindowsFormsApplication1.Properties.Resources._1b);
+                CzasOstatniegoOkrazenia(toCoWysyłaKolejkaPrzezPython);
+                ZmienObrazSektora(PowiazanieIndexuzPanel(2), WindowsFormsApplication1.Properties.Resources._1awaria);
+
+                panelSektorowAwarii.SetItemChecked(2, true);
             }
 
+            if (toCoWysyłaKolejkaPrzezPython == "P2:")
+            {
+                CzasOstatniegoOkrazenia(toCoWysyłaKolejkaPrzezPython);
+                ZmienObrazSektora(PowiazanieIndexuzPanel(3), WindowsFormsApplication1.Properties.Resources._1awaria);
 
+                panelSektorowAwarii.SetItemChecked(3, true);
+            }
 
-         
+            if (toCoWysyłaKolejkaPrzezPython == "P3:")
+            {
+                CzasOstatniegoOkrazenia(toCoWysyłaKolejkaPrzezPython);
+                ZmienObrazSektora(PowiazanieIndexuzPanel(4), WindowsFormsApplication1.Properties.Resources._1awaria);
+
+                panelSektorowAwarii.SetItemChecked(4, true);
+            }
+
+            if (toCoWysyłaKolejkaPrzezPython == "P4:")
+            {
+                CzasOstatniegoOkrazenia(toCoWysyłaKolejkaPrzezPython);
+                ZmienObrazSektora(PowiazanieIndexuzPanel(5), WindowsFormsApplication1.Properties.Resources._1awaria);
+
+                panelSektorowAwarii.SetItemChecked(5, true);
+            }
+
+            if (toCoWysyłaKolejkaPrzezPython == "P5:")
+            {
+                CzasOstatniegoOkrazenia(toCoWysyłaKolejkaPrzezPython);
+                ZmienObrazSektora(PowiazanieIndexuzPanel(6), WindowsFormsApplication1.Properties.Resources._1awaria);
+
+                panelSektorowAwarii.SetItemChecked(6, true);
+            }
+
+            if (toCoWysyłaKolejkaPrzezPython == "P6:")
+            {
+                CzasOstatniegoOkrazenia(toCoWysyłaKolejkaPrzezPython);
+                ZmienObrazSektora(PowiazanieIndexuzPanel(7), WindowsFormsApplication1.Properties.Resources._1awaria);
+
+                panelSektorowAwarii.SetItemChecked(7, true);
+            }
+
+            if (toCoWysyłaKolejkaPrzezPython == "P7:")
+            {
+                CzasOstatniegoOkrazenia(toCoWysyłaKolejkaPrzezPython);
+                ZmienObrazSektora(PowiazanieIndexuzPanel(8), WindowsFormsApplication1.Properties.Resources._1awaria);
+
+                panelSektorowAwarii.SetItemChecked(8, true);
+            }
+
+            if (toCoWysyłaKolejkaPrzezPython == "P8:")
+            {
+                CzasOstatniegoOkrazenia(toCoWysyłaKolejkaPrzezPython);
+                ZmienObrazSektora(PowiazanieIndexuzPanel(9), WindowsFormsApplication1.Properties.Resources._1awaria);
+
+                panelSektorowAwarii.SetItemChecked(9, true);
+            }
+
+            if (toCoWysyłaKolejkaPrzezPython == "P9:")
+            {
+                CzasOstatniegoOkrazenia(toCoWysyłaKolejkaPrzezPython);
+                ZmienObrazSektora(PowiazanieIndexuzPanel(10), WindowsFormsApplication1.Properties.Resources._1awaria);
+
+                panelSektorowAwarii.SetItemChecked(10, true);
+            }
         }
 
 
@@ -247,6 +344,7 @@ namespace WindowsFormsApplication1
                Controls["panel7"],
                Controls["panel8"],
                Controls["panel9"],
+               Controls["panel10"],
            };
 
 
@@ -271,7 +369,7 @@ namespace WindowsFormsApplication1
 
                 if (panelSektorowAwarii.GetItemChecked(numersektora) == true)
                 {
-                    ZmienObrazSektora(panel, WindowsFormsApplication1.Properties.Resources._10_red_bg);
+                    ZmienObrazSektora(panel, WindowsFormsApplication1.Properties.Resources._1awaria);
 
                 }
 
@@ -305,12 +403,14 @@ namespace WindowsFormsApplication1
         private void button4_Click(object sender, EventArgs e)
         {
             OnOff = !OnOff;
+            CommunicationChannel.SendMessage("A1:");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
             OnOff = !OnOff;
+            CommunicationChannel.SendMessage("A0:");
         }
 
 
@@ -332,40 +432,19 @@ namespace WindowsFormsApplication1
 
         private void button5_Click(object sender, EventArgs e)
         {
-            CommunicationChannel.SendMessage("S1:");
+            CommunicationChannel.SendMessage("S0:");
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            CommunicationChannel.SendMessage("A0:");
+            CommunicationChannel.SendMessage("S1:");
 
         }
 
-
-        private void button8_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
         {
-           
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-           
-        }
+            CommunicationChannel.SendMessage("S2:");
+        } 
     }
 
 
