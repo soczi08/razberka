@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -18,13 +18,12 @@ using System.Net;
 
 namespace WindowsFormsApplication1
 {
-
-
-
     public partial class Form1 : Form
     {
 
         private bool onOff;
+        IList<string> stringi = new List<string>();
+        Stack<DateTime> stack = new Stack<DateTime>();
 
         public bool OnOff
         {
@@ -40,7 +39,7 @@ namespace WindowsFormsApplication1
 
             if (!OnOff)
             {
-             
+
                 // CommunicationChannel.SendMessage("A1:");
                 button4.Enabled = false;
                 button1.Enabled = true;
@@ -58,11 +57,12 @@ namespace WindowsFormsApplication1
 
 
         }
+ 
         public Form1()
         {
             InitializeComponent();
 
-           
+
         }
         public Form1(InputChannel inputChannel
            )
@@ -86,29 +86,98 @@ namespace WindowsFormsApplication1
 
                 CommunicationChannel.SendMessage("S2:");
 
-                 
             };
-        
-
-            button3.Click += delegate
-            {
-
-                CommunicationChannel.SendMessage("A0:");
-
-
-            };
-
 
             btnDebug.Click += delegate
             {
                 CommunicationChannel.SendMessage(txtDebug.Text);
-
-
             };
             FormClosed += delegate { CommunicationChannel.EndCommunication(); };
             SetButtonOff();
-            inputChannel.DataRecievedEvent += (sender, data) => { MessageBox.Show("Test"); };
+
+
+
+
+            //reakcja na dane wejśiowe
+            inputChannel.DataRecievedEvent += (sender, daneZrasberry) =>
+            {
+                ReakcjNaDaneZRasberry(daneZrasberry);
+
+
+
+
+
+                /*
+                listBox1.DataSource = null;
+                stringi.Add(data);
+                listBox1.DataSource = stringi.Skip(Math.Max(0, stringi.Count() - 10)).ToList(); ;
+                MojaBaza mb = new MojaBaza();
+            mb.Insert(new SqlCommand("INSERT INTO [dbo].[Events] ([Event]) VALUES ('XYZ')"));
+                */
+            };
+
+            /*
+            MojaBaza mb = new MojaBaza();
+            mb.Insert(new SqlCommand("INSERT INTO [dbo].[Events] ([Event]) VALUES ('XYZ')"));
+            var x =mb.Select(new SqlCommand("select * from NumberofFailures"));
+            */
+         //   btnTestAddData.Click += delegate { inputChannel.OnDataRecieved(null, DateTime.Now.Minute +":"+ DateTime.Now.Second+ "." + DateTime.Now.Millisecond); };
+            btnTestAddData.Click += delegate { inputChannel.OnDataRecieved(null, txtDebug.Text); };
+
+
         }
+
+        private void ReakcjNaDaneZRasberry(string toCoWysyłaKolejkaPrzezPython)
+        {
+            if (toCoWysyłaKolejkaPrzezPython == "P0:")
+            {
+                CzasOstatniegoOkrazenia(toCoWysyłaKolejkaPrzezPython);
+                ZmienObrazSektora(PowiazanieIndexuzPanel(0), WindowsFormsApplication1.Properties.Resources._1awaria);
+
+                panelSektorowAwarii.SetItemChecked(0, true);
+
+
+
+
+            }
+            if (toCoWysyłaKolejkaPrzezPython == "P1:")
+            {
+                ZmienObrazSektora(PowiazanieIndexuzPanel(1), WindowsFormsApplication1.Properties.Resources._1b);
+            }
+
+
+
+         
+        }
+
+
+        private void CzasOstatniegoOkrazenia(string data)
+        {
+
+
+            TimeSpan differnce = new TimeSpan();
+            stack.Push(DateTime.Now);
+            if (stack.Count == 1) { return; }
+            if (stack.Count >= 2)
+            {
+                var top = stack.Pop();
+                var topminusone = stack.Pop();
+                stack.Push(topminusone);
+                stack.Push(top);
+
+                differnce = top.Subtract(topminusone);
+                textBox2.Text = differnce.Seconds.ToString() + "." + differnce.Milliseconds.ToString();
+            }
+
+
+            /*
+      
+             MojaBaza mb = new MojaBaza();
+            mb.Insert(new SqlCommand($"INSERT INTO [dbo].[Events] ([Event]) VALUES ({differnce})"));
+             
+    */
+        }
+
 
         private void Wysylanie_komunikatu_do_rpi(object sender, ItemCheckEventArgs e)
         {
@@ -149,7 +218,7 @@ namespace WindowsFormsApplication1
                     break;
             }
 
-            
+
 
 
         }
@@ -157,14 +226,14 @@ namespace WindowsFormsApplication1
         //Funkcja tworząca listę sektorów
         private void UtworzListeSektorow()
         {
-            for (int i = 1; i< 10; i++)
+            for (int i = 1; i < 10; i++)
             {
                 panelSektorowAwarii.Items.Add("sektor" + " " + i);
             }
 
-}
-  //Funkcja tworząca tory        
-    private void UstwawTloWszystkichKontrolek()
+        }
+        //Funkcja tworząca tory        
+        private void UstwawTloWszystkichKontrolek()
         {
 
             var lista = new List<Control>()
@@ -180,20 +249,12 @@ namespace WindowsFormsApplication1
                Controls["panel9"],
            };
 
-       
+
         }
-
-        /*
-        Funckaj ReakcjaNaZmianeCheckboxa
-        Funkcja ZmianaTlaWWybranymSektorze
-        Funckja PowiazanieIndexuzPanel
-        */
-
-
         private void ReakcjaNaZmianeCheckboxa(object sender, ItemCheckEventArgs e)
         {
             int numersektora = panelSektorowAwarii.SelectedIndex;
-            ZmianaTlaWWybranymSektorze(numersektora, PowiazanieIndexuzPanel(numersektora));
+            //ZmianaTlaWWybranymSektorze(numersektora, PowiazanieIndexuzPanel(numersektora));
         }
 
         private void ZmienObrazSektora(Control sektorDoZmiany, Image wgrywanyObraz)
@@ -206,11 +267,11 @@ namespace WindowsFormsApplication1
             int numersektora = panelSektorowAwarii.SelectedIndex;
             if (numersektora == index)
             {
-                ZmienObrazSektora(panel, WindowsFormsApplication1.Properties.Resources.awarias);
+                ZmienObrazSektora(panel, WindowsFormsApplication1.Properties.Resources._1);
 
                 if (panelSektorowAwarii.GetItemChecked(numersektora) == true)
                 {
-                    ZmienObrazSektora(panel, WindowsFormsApplication1.Properties.Resources.Bez_tytułu);
+                    ZmienObrazSektora(panel, WindowsFormsApplication1.Properties.Resources._10_red_bg);
 
                 }
 
@@ -236,11 +297,11 @@ namespace WindowsFormsApplication1
                 return panel8;
             if (index == 8)
                 return panel9;
-            return null; 
+            return null;
 
         }
 
-    
+
         private void button4_Click(object sender, EventArgs e)
         {
             OnOff = !OnOff;
@@ -277,6 +338,39 @@ namespace WindowsFormsApplication1
         private void button6_Click(object sender, EventArgs e)
         {
             CommunicationChannel.SendMessage("A0:");
+
+        }
+
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+           
         }
     }
+
+
+
+
+
+
 }
