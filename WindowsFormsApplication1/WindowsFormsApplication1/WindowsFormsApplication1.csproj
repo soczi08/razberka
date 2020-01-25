@@ -112,45 +112,125 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1awaria.png" />
+    <None Include="Resources\pozycja1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1awariapozycja.png" />
+    <None Include="Resources\tory1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1.png" />
+    <None Include="Resources\tory2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\2.png" />
+    <None Include="Resources\tory3.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\3.png" />
+    <None Include="Resources\tory4.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\4.png" />
+    <None Include="Resources\tory5.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\5.png" />
+    <None Include="Resources\tory6.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\6.png" />
+    <None Include="Resources\tory7.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\7.png" />
+    <None Include="Resources\tory8.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\8.png" />
+    <None Include="Resources\tory9.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\9.png" />
+    <None Include="Resources\tory10.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\10.png" />
+    <None Include="Resources\pozycja2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1_green_led.png" />
+    <None Include="Resources\pozycja3.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\pozycja4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pozycja5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pozycja6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pozycja7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pozycja8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pozycja9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pozycja10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\awaria1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\awaria2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\awaria3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\awaria4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\awaria5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\awaria6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\awaria7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\awaria8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\awaria9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\awaria10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\awariapozycja1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\awariapozycja2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\awariapozycja3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\awariapozycja4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\awariapozycja5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\awariapozycja6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\awariapozycja7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\awariapozycja8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\awariapozycja9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\awariapozycja10.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

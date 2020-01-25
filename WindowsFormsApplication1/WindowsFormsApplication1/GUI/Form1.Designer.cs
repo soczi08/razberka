@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -73,24 +72,24 @@
             // 
             // panel2
             // 
-            this.panel2.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources._1;
-            this.panel2.Location = new System.Drawing.Point(928, 110);
+            this.panel2.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.tory2;
+            this.panel2.Location = new System.Drawing.Point(806, 121);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(107, 104);
             this.panel2.TabIndex = 1;
             // 
             // panel3
             // 
-            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.Location = new System.Drawing.Point(1041, 110);
+            this.panel3.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.tory3;
+            this.panel3.Location = new System.Drawing.Point(907, 121);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(107, 104);
             this.panel3.TabIndex = 2;
             // 
             // panel4
             // 
-            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
-            this.panel4.Location = new System.Drawing.Point(1147, 110);
+            this.panel4.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.tory4;
+            this.panel4.Location = new System.Drawing.Point(1020, 124);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(107, 104);
             this.panel4.TabIndex = 2;
@@ -173,32 +172,32 @@
             // 
             // panel6
             // 
-            this.panel6.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources._1;
-            this.panel6.Location = new System.Drawing.Point(1260, 229);
+            this.panel6.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.tory6;
+            this.panel6.Location = new System.Drawing.Point(1034, 350);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(100, 104);
             this.panel6.TabIndex = 17;
             // 
             // panel7
             // 
-            this.panel7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel7.BackgroundImage")));
-            this.panel7.Location = new System.Drawing.Point(1167, 328);
+            this.panel7.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.tory7;
+            this.panel7.Location = new System.Drawing.Point(928, 377);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(100, 104);
             this.panel7.TabIndex = 18;
             // 
             // panel8
             // 
-            this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
-            this.panel8.Location = new System.Drawing.Point(1048, 328);
+            this.panel8.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.tory8;
+            this.panel8.Location = new System.Drawing.Point(822, 377);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(100, 104);
             this.panel8.TabIndex = 18;
             // 
             // panel9
             // 
-            this.panel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel9.BackgroundImage")));
-            this.panel9.Location = new System.Drawing.Point(928, 328);
+            this.panel9.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.tory9;
+            this.panel9.Location = new System.Drawing.Point(710, 340);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(100, 104);
             this.panel9.TabIndex = 19;
@@ -353,8 +352,8 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources._1;
-            this.panel1.Location = new System.Drawing.Point(822, 152);
+            this.panel1.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.tory1;
+            this.panel1.Location = new System.Drawing.Point(710, 128);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(100, 100);
             this.panel1.TabIndex = 0;
@@ -370,16 +369,16 @@
             // 
             // panel5
             // 
-            this.panel5.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources._1;
-            this.panel5.Location = new System.Drawing.Point(1260, 110);
+            this.panel5.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.tory5;
+            this.panel5.Location = new System.Drawing.Point(1102, 240);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(100, 104);
             this.panel5.TabIndex = 48;
             // 
             // panel10
             // 
-            this.panel10.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources._1;
-            this.panel10.Location = new System.Drawing.Point(802, 270);
+            this.panel10.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.tory10;
+            this.panel10.Location = new System.Drawing.Point(707, 234);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(100, 100);
             this.panel10.TabIndex = 49;
@@ -390,6 +389,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1433, 793);
+            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.panel9);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.btnTestAddData);
@@ -416,11 +418,8 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panelSektorowAwarii);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.panel9);
-            this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
